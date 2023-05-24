@@ -2,7 +2,7 @@
 <img width="200" alt="Screen Shot 2022-07-31 at 8 03 27 PM" src="https://github.com/MichaelNgCen/nwflxs/assets/38708266/b299039e-d1c1-4941-b359-977e7737684f">
 </h1>
 
-### Description: NewFlix is music video streaming web application inspired by Netflix.
+### Description: NewFlixs (nwflxs) is music video streaming web application inspired by Netflix.
 
 Auth Screen 
 
