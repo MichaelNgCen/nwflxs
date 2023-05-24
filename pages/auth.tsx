@@ -11,7 +11,7 @@ const Auth = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const [variant, setVariant] = useState("");
+  const [variant, setVariant] = useState("login");
 
   const login = useCallback(async () => {
     try {
@@ -52,7 +52,7 @@ const Auth = () => {
           <img src="/images/logo.png" alt="logo" className="h-12" />
         </nav>
         <div className="flex justify-center">
-          <div className="bg-black bg-opacity-70 px-16 py-16 self-auto mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
+          <div className="bg-black bg-opacity-70 px-16 py-16 self-auto mt-0 lg:w-2/5 lg:max-w-md rounded-md w-full">
             <h2 className="text-white text-4xl mb-8 font-semibold">
               {variant === "login" ? "Sign In" : "Register"}
             </h2>

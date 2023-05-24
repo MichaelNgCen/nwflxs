@@ -1,6 +1,7 @@
 import React from "react";
 
-interface InputProps { // 
+interface InputProps {
+  //
   id: string;
   onChange: any;
   value: string;
