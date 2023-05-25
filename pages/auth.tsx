@@ -46,7 +46,7 @@ const Auth = () => {
   }, []);
 
   const handleDemoLogin = async () => {
-    const demoEmail = "JangWonyoung@Gmail.com";
+    const demoEmail = "JangWonyoung@izone.ive";
     const demoPassword = "IzoneIve";
 
     const typingDelay = 75;
