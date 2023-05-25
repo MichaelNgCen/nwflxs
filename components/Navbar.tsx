@@ -34,7 +34,11 @@ const Navbar = () => {
           className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative"
         >
           <p className="text-white text-sm">Browse</p>
-          <BsChevronDown className="text-white transition" />
+          <BsChevronDown
+            className={`text-white transition ${
+              showMobileMenu ? "rotate-180" : "rotate-0"
+            }`}
+          />
           <MobileMenu visible={showMobileMenu} />
         </div>
         <div className="flex flex-row ml-auto gap-7 items-center">
@@ -52,7 +56,11 @@ const Navbar = () => {
             <div className="w-6 h-9 lg:w-10 rounded-md overflow-hidden">
               <img src="/images/default-red.png " alt="" />
             </div>
-            <BsChevronDown className="text-white transition" />
+            <BsChevronDown
+              className={`text-white transition ${
+                showAccountMenu ? "rotate-180" : "rotate-0"
+              }`}
+            />
             <AccountMenu visible={showAccountMenu} />
           </div>
         </div>
