@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { SetStateAction, useCallback, useState } from "react";
 import Input from "../components/input";
 import { signIn } from "next-auth/react";
 
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+// import { FcGoogle } from "react-icons/fc";
+// import { FaGithub } from "react-icons/fa";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -44,6 +44,44 @@ const Auth = () => {
       (currentVariant) => (currentVariant === "login" ? "register" : "login") // if the current variant is login, then set the variant to register, else set the variant to login
     );
   }, []);
+
+  const handleDemoLogin = async () => {
+    const demoEmail = "JangWonyoung@Gmail.com";
+    const demoPassword = "IzoneIve";
+
+    const typingDelay = 75;
+    const typingSpeed = 50;
+
+    const animateTyping = async (
+      text: string | any[],
+      setterFunction: (value: SetStateAction<string>) => void
+    ) => {
+      for (let i = 0; i < text.length; i++) {
+        await new Promise((resolve) => setTimeout(resolve, typingSpeed));
+        setterFunction((prevText: string) => prevText + text[i]);
+      }
+    };
+
+    setEmail("");
+    setName("");
+    setPassword("");
+
+    await animateTyping(demoEmail, setEmail);
+    await new Promise((resolve) =>
+      setTimeout(resolve, demoEmail.length * typingDelay)
+    );
+    await animateTyping(demoPassword, setPassword);
+
+    try {
+      await signIn("credentials", {
+        email: demoEmail,
+        password: demoPassword,
+        callbackUrl: "/profiles",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-norepeat bg-center bg-cover">
@@ -99,7 +137,15 @@ const Auth = () => {
             >
               {variant === "login" ? "Sign In" : "Register"}
             </button>
-            <div
+
+            <button
+              onClick={handleDemoLogin}
+              className="bg-primary py-3 text-white rounded-md w-full mt-4 hover:brightness-75 transition"
+            >
+              Demo Login
+            </button>
+
+            {/* <div
               onClick={() => signIn("google", { callbackUrl: "/profiles" })}
               className="flex flex-row items-center gap-4 mt-5 justify-center"
             >
@@ -112,7 +158,7 @@ const Auth = () => {
               >
                 <FaGithub size={30} />
               </div>
-            </div>
+            </div> */}
 
             <p className="text-neutral-500 mt-12">
               {variant === "login"

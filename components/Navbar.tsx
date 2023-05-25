@@ -3,6 +3,7 @@ import { BsBell, BsChevronDown, BsSearch } from "react-icons/bs";
 import MobileMenu from "./MobileMenu";
 import NavBarItem from "./NavBarItem";
 import { useCallback, useState } from "react";
+import AccountMenu from "./AccountMenu";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -39,10 +40,11 @@ const Navbar = () => {
             <BsBell />
           </div>
           <div className="flex flex-row items-center gap-2 cursor-pointer relative">
-            <div className="w-6 h-6 lg:w-10 rounded-md overflow-hidden">
+            <div className="w-6 h-9 lg:w-10 rounded-md overflow-hidden">
               <img src="/images/default-red.png " alt="" />
             </div>
             <BsChevronDown className="text-white transition" />
+            <AccountMenu />
           </div>
         </div>
       </div>
