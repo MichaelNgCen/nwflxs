@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFillPlayBtnFill, BsFillPlayFill } from "react-icons/bs";
+import FavoriteButton from "./FavoriteButton";
 
 interface MovieCardProps {
   data: Record<string, any>;
@@ -30,6 +31,7 @@ invisible sm:visible delay-300 w-full scale-0 group-hover:scale-110 group-hover:
             >
               <BsFillPlayFill size={30} />
             </div>
+            <FavoriteButton movieId={data.id} />
           </div>
           <p className="text-green-400 font-semibold mt-4">
             New <span className="text-white">2023</span>
