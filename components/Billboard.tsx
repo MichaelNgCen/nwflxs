@@ -3,10 +3,16 @@ import React, { useState } from "react";
 
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import PlayButton from "./PlayButton";
+import useInfoModal from "@/hooks/useInfoModal";
 
 const Billboard = () => {
   const { data } = useBillboard();
   const [isMuted, setIsMuted] = useState(true);
+  const { openModal } = useInfoModal();
+
+  const handleOpenModal = () => {
+    openModal(data?.id);
+  };
 
   const handleToggleMute = () => {
     setIsMuted(!isMuted);
@@ -33,9 +39,7 @@ const Billboard = () => {
           <PlayButton movieId={data?.id} />
           <button
             className="bg-white text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition"
-            onClick={() => {
-              window.location.href = `https://www.google.com/search?q= ${data?.title}`;
-            }}
+            onClick={handleOpenModal}
           >
             <AiOutlineInfoCircle className="mr-1" />
             More Info
