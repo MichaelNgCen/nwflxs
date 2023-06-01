@@ -33,7 +33,9 @@ const Billboard = () => {
           <PlayButton movieId={data?.id} />
           <button
             className="bg-white text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition"
-            onClick={handleToggleMute}
+            onClick={() => {
+              window.location.href = `https://www.google.com/search?q= ${data?.title}`;
+            }}
           >
             <AiOutlineInfoCircle className="mr-1" />
             More Info
