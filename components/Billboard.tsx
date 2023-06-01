@@ -45,7 +45,7 @@ const Billboard = () => {
             More Info
           </button>
           <button
-            className="bg-white text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition"
+            className=" hidden md:block bg-white text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex-row items-center hover:bg-opacity-20 transition"
             onClick={handleToggleMute}
           >
             {isMuted ? "Unmute" : "Mute"} Video
