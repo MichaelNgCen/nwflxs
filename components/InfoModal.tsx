@@ -47,7 +47,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
               muted
               loop
               poster={data?.thumbnailUrl}
-              src={data?.thumbnailUrl}
+              src={data?.videoUrl}
             ></video>
             <div
               className="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center"
