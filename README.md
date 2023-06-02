@@ -22,3 +22,15 @@ Auth Screen
 
 <img width="275" alt="Screen Shot 2023-04-14 at 12 19 06 AM" src="https://github.com/MichaelNgCen/nwflxs/assets/38708266/2fcad5e7-8929-41cd-a9ee-9ed974abe7a1">
 
+<br />
+<br />
+<br />
+
+Main Screen 
+
+<img src="https://github.com/MichaelNgCen/nwflxs/assets/38708266/5842d3d2-6a8b-4dcf-8517-96e234bcee66" width="640" height="360"/>
+
+- useSwr hook in the useBillboard custom hook is responsible for fetching the data from the /api/random endpoint. The data variable returned by useSwr will contain the randomly selected movie data.
+
+<img width="275" alt="Screen Shot 2023-04-14 at 12 19 06 AM" src="https://github.com/MichaelNgCen/nwflxs/assets/38708266/fef2da23-3843-4528-b1b3-a550d82ca7b6">
+
