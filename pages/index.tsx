@@ -1,4 +1,3 @@
-import useCurrentUser from "@/hooks/useCurrentUser";
 import { NextPageContext } from "next";
 import { signOut, getSession } from "next-auth/react";
 import Navbar from "@/components/Navbar";
