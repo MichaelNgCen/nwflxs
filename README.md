@@ -11,3 +11,14 @@ Auth Screen
 - toggleVariant is a function that when is called, it updates the state variable variant to the opposite value of its current state.
 
 <img width="275" alt="Screen Shot 2023-04-14 at 12 19 06 AM" src="https://github.com/MichaelNgCen/nwflxs/assets/38708266/9831e160-ae99-4d31-8063-30d43bade32c">
+
+<br />
+<br />
+<br />
+
+<img src="https://github.com/MichaelNgCen/nwflxs/assets/38708266/4f0dfd8f-2cbc-4b62-b8ae-fa918c26a49f" width="640" height="360"/>
+
+- handleDemoLogin function simulates typing the demo email and password, sets the corresponding state variables, and then attempts to log in using the demo credentials.
+
+<img width="275" alt="Screen Shot 2023-04-14 at 12 19 06 AM" src="https://github.com/MichaelNgCen/nwflxs/assets/38708266/2fcad5e7-8929-41cd-a9ee-9ed974abe7a1">
+
