@@ -31,13 +31,15 @@ export default function Home() {
   const { data: favorites = [] } = useFavorites();
   const { isOpen, closeModal } = useInfoModal();
 
+  const trendingMovies = movies.slice(0, 4); // Limit to 4 movies
+
   return (
     <>
       <InfoModal visible={isOpen} onClose={closeModal}></InfoModal>
       <Navbar></Navbar>
       <Billboard></Billboard>
       <div className="pb-40">
-        <MovieList title="Trending Now" data={movies}></MovieList>
+        <MovieList title="Trending Now" data={trendingMovies}></MovieList>
         <MovieList title="My List" data={favorites}></MovieList>
       </div>
     </>
