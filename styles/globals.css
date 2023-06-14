@@ -16,3 +16,14 @@ html {
 
 
 
+.search-bar-container {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.search-bar-container.open {
+  opacity: 1;
+  max-height: 50px; /* Adjust the desired height */
+}

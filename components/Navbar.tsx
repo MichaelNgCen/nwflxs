@@ -1,5 +1,4 @@
 import { BsBell, BsChevronDown, BsSearch } from "react-icons/bs";
-
 import MobileMenu from "./MobileMenu";
 import NavBarItem from "./NavBarItem";
 import { useCallback, useEffect, useState } from "react";
@@ -11,6 +10,8 @@ const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSearchBar, setShowSearchBar] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +34,14 @@ const Navbar = () => {
   const toggleAccountMenu = useCallback(() => {
     setShowAccountMenu((currentMobileMenu) => !currentMobileMenu);
   }, []);
+
+  const handleSearch = () => {
+    window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
+  };
+
+  const toggleSearchBar = () => {
+    setShowSearchBar((prevState) => !prevState);
+  };
 
   return (
     <nav className="w-full fixed z-40">
@@ -64,7 +73,20 @@ const Navbar = () => {
         </div>
         <div className="flex flex-row ml-auto gap-7 items-center">
           <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
-            <BsSearch />
+            <BsSearch onClick={toggleSearchBar} />
+          </div>
+          <div
+            className={`search-bar-container ${showSearchBar ? "open" : ""}`}
+          >
+            <input
+              type="text"
+              placeholder="Titles, Artists, Genres"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={`px-2 py-1 rounded-md outline-none bg-black text-white text-sm ${
+                showSearchBar ? "" : "hidden"
+              }`}
+            />
           </div>
           <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
             <BsBell />
