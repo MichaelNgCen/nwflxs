@@ -25,13 +25,23 @@ export async function getServerSideProps(context: NextPageContext) {
   };
 }
 
+const shuffleArray = (array: any) => {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+};
+
 export default function Home() {
   // const { data: user } = useCurrentUser();
   const { data: movies = [] } = useMovieList();
   const { data: favorites = [] } = useFavorites();
   const { isOpen, closeModal } = useInfoModal();
 
-  const trendingMovies = movies.slice(0, 4); // Limit to 4 movies
+  const shuffledMovies = shuffleArray(movies); // Shuffle the movies array
+  const trendingMovies = shuffledMovies.slice(0, 4); // Limit to 4 random movies
 
   return (
     <>
