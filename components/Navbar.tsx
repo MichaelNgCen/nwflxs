@@ -43,6 +43,14 @@ const Navbar = () => {
     setShowSearchBar((prevState) => !prevState);
   };
 
+  const handleHomeClick = () => {
+    window.location.href = "/";
+  };
+
+  const handleAllMusicVideosClick = () => {
+    window.location.href = "/all";
+  };
+
   return (
     <nav className="w-full fixed z-40">
       <div
@@ -52,8 +60,11 @@ const Navbar = () => {
       >
         <img className="h-4 lg:h-7" src="/images/logo.png" alt="Logo" />
         <div className="flex-row ml-8 gap-7 hidden lg:flex">
-          <NavBarItem label="Home" />
-          <NavBarItem label="All Music Videos" />
+          <NavBarItem label="Home" onClick={handleHomeClick} />
+          <NavBarItem
+            label="All Music Videos"
+            onClick={handleAllMusicVideosClick}
+          />
         </div>
         <div
           onClick={toggleMobileMenu}
