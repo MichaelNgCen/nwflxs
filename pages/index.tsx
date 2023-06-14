@@ -42,6 +42,8 @@ export default function Home() {
 
   const shuffledMovies = shuffleArray(movies); // Shuffle the movies array
   const trendingMovies = shuffledMovies.slice(0, 4); // Limit to 4 random movies
+  const slicedMovies = shuffledMovies.slice(4); // Remove the first 4 movies from the array
+  
 
   return (
     <>
@@ -50,6 +52,7 @@ export default function Home() {
       <Billboard></Billboard>
       <div className="pb-40">
         <MovieList title="Trending Now" data={trendingMovies}></MovieList>
+        <MovieList title="Newest" data={slicedMovies}></MovieList>
         <MovieList title="My List" data={favorites}></MovieList>
       </div>
     </>
