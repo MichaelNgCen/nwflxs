@@ -23,7 +23,7 @@ export async function getServerSideProps(context: NextPageContext) {
   };
 }
 
-export default function Home() {
+export default function All() {
   const { data: movies = [] } = useMovieList();
   const { isOpen, closeModal } = useInfoModal();
 
