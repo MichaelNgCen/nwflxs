@@ -42,7 +42,7 @@ export default function Home() {
 
   const shuffledMovies = shuffleArray(movies); // Shuffle the movies array
   const trendingMovies = shuffledMovies.slice(0, 4); // Limit to 4 random movies
-  const slicedMovies = shuffledMovies.slice(4); // Remove the first 4 movies from the array
+  const slicedMovies = movies.slice(-4);
   
 
   return (
