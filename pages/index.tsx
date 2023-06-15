@@ -8,6 +8,7 @@ import useFavorites from "@/hooks/useFavorites";
 import InfoModal from "@/components/InfoModal";
 import useInfoModal from "@/hooks/useInfoModal";
 
+
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
 
